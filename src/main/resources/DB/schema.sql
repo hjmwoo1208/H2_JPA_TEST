@@ -6,8 +6,8 @@ CREATE TABLE EMP
     JOB VARCHAR(9),
     MGR int(4) ,
     HIREDATE date,
-    SAL decimal ,
-    COMM decimal ,
+    SAL int ,
+    COMM int ,
     DEPTNO int
 );
 
@@ -23,6 +23,6 @@ drop table SALGRADE if exists ;
 CREATE TABLE SALGRADE
 (
     GRADE int,
-    LOSAL decimal,
-    HISAL decimal
+    LOSAL int,
+    HISAL int
 );
