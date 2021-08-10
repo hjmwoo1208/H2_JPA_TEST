@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE # url 접속 시 jdbc:h2:mem:testdb 이걸 꼭 적어줘야 웹페이지로 DB정보를 볼 수 있다.
+    driverClassName: org.h2.Driver
+    username: test
+    password:
+    initialization-mode: always #가동 될 때 마다 schema와 data로 지정해놓은 내용들이 초기화를 진행
+    schema: classpath:DB/schema.sql
+    data: classpath:DB/data.sql
+  h2:
+    console:
+    enabled: true
+    path: /h2-console
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true # 압축된 쿼리를 읽기 좋게 포멧
+    hibernate:
+      ddl-auto: create # 서버 시작에 테이블 생성
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug # 로그 형식으로 쿼리 보여주기
