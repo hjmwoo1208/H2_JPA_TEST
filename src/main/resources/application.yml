@@ -10,8 +10,8 @@ spring:
     username: test
     password:
     initialization-mode: always #가동 될 때 마다 schema와 data로 지정해놓은 내용들이 초기화를 진행
-    schema: classpath:DB/Schema.sql
-    data: classpath:DB/Data.sql
+    schema: classpath:DB/SampleSchema.sql
+    data: classpath:DB/SampleData.sql
   h2:
     console:
     enabled: true
@@ -21,7 +21,7 @@ spring:
       hibernate:
         format_sql: true # 압축된 쿼리를 읽기 좋게 포멧
     hibernate:
-      ddl-auto: validate # create : 서버 시작에 테이블만!!! 생성 (DDL이니깐) , validate 검증 용도로만
+      ddl-auto: none # create : 서버 시작에 테이블만!!! 생성 (DDL이니깐) , validate 검증 용도로만
     show-sql: true
 
 logging:
