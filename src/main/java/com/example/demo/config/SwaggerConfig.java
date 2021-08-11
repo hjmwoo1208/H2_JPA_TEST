@@ -36,7 +36,7 @@ public class SwaggerConfig {
 //                .apiInfo(apiInfo()).groupName(version)
 //                .select()
 //                .protocols(Collections.singleton("https"))
-                .host("localhost:").apiInfo(apiInfo()).groupName(version).select()
+                .host("localhost:8080").apiInfo(apiInfo()).groupName(version).select()
                 .apis(RequestHandlerSelectors.basePackage("com.example.demo.controller"))
                 .paths(postPaths()).build()
                 .useDefaultResponseMessages(false)
