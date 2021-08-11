@@ -1,40 +1,34 @@
 package com.example.demo.dto;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.*;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.relational.core.mapping.Column;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Getter
+@Setter
+@ApiModel
+@AllArgsConstructor
+@Entity
 public class DEPT {
+    @Id
+    @ApiModelProperty(value = "부서번호(PK)")
     int DEPTNO;
-    String DNAME;
-    String LOC;
 
-    public DEPT() {}
+    @Column
+    @ApiModelProperty(value = "부서명")
+    private String DNAME;
 
-    public DEPT(int DEPTNO, String DNAME, String LOC) {
-        this.DEPTNO = DEPTNO;
-        this.DNAME = DNAME;
-        this.LOC = LOC;
-    }
+    @Column
+    @ApiModelProperty(value = "부서위치")
+    private String LOC;
 
-    public int getDEPTNO() {
-        return DEPTNO;
-    }
+    public DEPT() {
 
-    public void setDEPTNO(int DEPTNO) {
-        this.DEPTNO = DEPTNO;
-    }
-
-    public String getDNAME() {
-        return DNAME;
-    }
-
-    public void setDNAME(String DNAME) {
-        this.DNAME = DNAME;
-    }
-
-    public String getLOC() {
-        return LOC;
-    }
-
-    public void setLOC(String LOC) {
-        this.LOC = LOC;
     }
 
     @Override

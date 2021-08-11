@@ -19,7 +19,7 @@ CREATE TABLE DEPT
     LOC VARCHAR(13)
 );
 
-drop table SALGRADE if exists ;
+-- drop table SALGRADE if exists ;
 CREATE TABLE SALGRADE
 (
     GRADE int,
